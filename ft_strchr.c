@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:42:45 by mknoll            #+#    #+#             */
-/*   Updated: 2024/10/17 09:26:21 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2024/10/22 11:05:46 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-int main()
-{
-	char	*str = " Hello World";
+// int main()
+// {
+// 	char	*str = " Hello World";
 
-	printf("%s", ft_strchr(str, 'W'));
-	printf("%s", strchr(str, 'W'));
-}
+// 	printf("%s", ft_strchr(str, 'W'));
+// 	printf("%s", strchr(str, 'W'));
+// }

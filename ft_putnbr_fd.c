@@ -3,40 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 12:21:52 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/21 17:58:35 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2024/10/22 11:08:26 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-    write(fd, &c, 1);
+	write(fd, &c, 1);
 }
 
-void    ft_putnbr_fd(int nb, int fd)
+void	ft_putnbr_fd(int nb, int fd)
 {
-    if (nb == -2147483648)
-    {
-        write(fd, "-2147483848", 11);
-        return ;
-    }
-
-    if (nb < 0)
-    {
-        write(fd, "-", 1);
-        nb *= -1;
-    }
-    if (nb > 9)
-    {
-        ft_putnbr_fd(nb / 10, fd);
-        ft_putnbr_fd(nb % 10, fd);
-    }
-    else
-    {
-        ft_putchar_fd(nb + '0', fd);
-    }
+	if (nb == -2147483648)
+	{
+		write(fd, "-2147483848", 11);
+		return ;
+	}
+	if (nb < 0)
+	{
+		write(fd, "-", 1);
+		nb *= -1;
+	}
+	if (nb > 9)
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
+	}
+	else
+	{
+		ft_putchar_fd(nb + '0', fd);
+	}
 }

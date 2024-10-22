@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 12:43:02 by mknoll            #+#    #+#             */
-/*   Updated: 2024/10/14 13:01:59 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/22 11:02:13 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,20 @@ int	ft_isalpha(char *str)
 	while (str[i] != '\0')
 	{
 		if (!((str[i] >= 65 && str[i] <= 90)
-			|| (str[i] >= 97 && str[i] <= 122)))
-			{
+				|| (str[i] >= 97 && str[i] <= 122)))
+		{
 			return (0);
-			}
+		}
 		i++;
 	}
 	return (1);
 }
 
-int main()
-{
-	char *str = "HElLLo";
-	//char str1[] = "HELLO";
+// int main()
+// {
+// 	char *str = "HElLLo";
+// 	//char str1[] = "HELLO";
 
-	printf("%d", ft_isalpha(str));
-    printf("%d", isalpha(str));    
-}
+// 	printf("%d", ft_isalpha(str));
+//     printf("%d", isalpha(str));    
+// }

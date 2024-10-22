@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 12:59:56 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/16 13:38:22 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2024/10/22 11:58:39 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <ft_memset.c>
 
-void	*ft_memset(void *ptr, int value, int n)
+static void	*ft_memset(void *ptr, int value, int n)
 {
 	int				i;
 	unsigned char	*byte_ptr;
@@ -29,21 +28,17 @@ void	*ft_memset(void *ptr, int value, int n)
 	return (ptr);
 }
 
-void*   calloc(size_t nitems, size_t size)
+void	*calloc(size_t nitems, size_t size)
 {
-    size_t total_size;
-    void *ptr;
+	size_t	total_size;
+	void	*ptr;
 
-    total_size = nitems * size;
-    ptr = (char *)malloc(total_size);
-
-    if (ptr == NULL)
-    {
-        return (NULL);
-    }
-
-    ft_memset(ptr, 0, total_size);
-
-    return (ptr);
-    
+	total_size = nitems * size;
+	ptr = (char *)malloc(total_size);
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
+	ft_memset(ptr, 0, total_size);
+	return (ptr);
 }

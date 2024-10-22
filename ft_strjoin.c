@@ -3,64 +3,69 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 15:17:29 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/18 15:39:31 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2024/10/22 11:20:20 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-char *ft_strjoin(char const *s1, char const *s2)
+static int	ft_strlen(char *str)
 {
-    int i; 
-    int j;
-    int len_s1;
-    int len_s2;
-    char *new_string;
+	int	len;
 
-    len_s1 = 0;
-    len_s2 = 0;
-    i = 0;
-    j = 0;
-    while (s1[len_s1])
-    {
-        len_s1++;
-    }
-    while (s2[len_s2])
-    {
-        len_s2++;
-    }
-    new_string = (char *)malloc(len_s1 + len_s2 + 1);
-
-    if (!new_string)
-    {
-        return (NULL);
-    }
-    while (s1[i])
-    {
-        new_string[j] = s1[i]; 
-        i++;
-        j++;
-    }
-    i = 0;
-    while (s2[i])
-    {
-        new_string[j] = s2[i];
-        i++;
-        j++;
-    }
-    new_string[j] = '\0';
-
-    return (new_string);
+	len = 0;
+	while (str[len])
+	{
+		len++;
+	}
+	return (len);
 }
 
-int main ()
+static void	ft_strcat(char *dest, char *src)
 {
-    char *str1 = "Hello"; 
-    char *str2 = "World"; 
+	unsigned int	i;
+	unsigned int	j;
 
-    printf("%s", ft_strjoin(str1, str2));
+	j = 0;
+	i = 0;
+	while (dest[i])
+	{
+		i++;
+	}
+	while (src[j])
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
 }
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	int		len_s1;
+	int		len_s2;
+	char	*new_string;
+
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	new_string = (char *)malloc(len_s1 + len_s2 + 1);
+	if (!new_string)
+		return (NULL);
+	new_string[0] = '\0';
+	ft_strcat(new_string, (char *)s1);
+	ft_strcat(new_string, (char *)s2);
+	return (new_string);
+}
+
+// int main ()
+// {
+//     char *str1 = "Hello"; 
+//     char *str2 = "World"; 
+
+//     printf("%s", ft_strjoin(str1, str2));
+// }

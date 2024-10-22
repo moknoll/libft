@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:28 by mknoll            #+#    #+#             */
-/*   Updated: 2024/10/15 12:28:07 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/22 10:52:43 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	bzero(void *s, int n)
 
 	i = 0;
 	byte_ptr = (unsigned char *) s;
-
 	while (i < n)
 	{
 		byte_ptr[i] = 0;

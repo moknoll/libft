@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 11:33:21 by mknoll            #+#    #+#             */
-/*   Updated: 2024/09/18 09:56:22 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/22 10:26:55 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	return (s1[i] - s2[i]);
 }
 
-int main()
-{
-	char s1[] = "Bon";
- 	char s2[] = "Bonjour";
- 	printf("%d\n", ft_strncmp(s1, s2, 3));
- 	printf("%d\n", ft_strncmp(s1, s2, 4));
-	}
+// int main()
+// {
+// 	char s1[] = "Bon";
+//  	char s2[] = "Bonjour";
+//  	printf("%d\n", ft_strncmp(s1, s2, 3));
+//  	printf("%d\n", ft_strncmp(s1, s2, 4));
+// 	}

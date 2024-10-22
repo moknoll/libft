@@ -3,58 +3,59 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 08:45:52 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/22 11:10:20 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/22 20:06:23 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
-static	int get_num_length(int n)
+static int	ft_digit_count(long int i)
 {
-	int	len;
-	len = (n <= 0) ? 1 : 0;
+	int	count;
 
-	while (n != 0)
+	count = 0;
+	if (i < 0)
 	{
-		len++;
-		n /= 10;
+		i *= -1;
+		count++;
 	}
-
-	return (len);
+	while (i > 0)
+	{
+		i /= 10;
+		count++;
+	}
+	return (count);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
-	int	len;
-	get_num_length(n);
-	char	*str = (char *)malloc(len + 1);
-	long	num = n;
-	int	i;
+	char		*str;
+	int			i;
+	long int	nb;
 
-	i = len - 1;
-
-	if (!str)
-		return (NULL);
-
-	str[len] = '\0';
-
-	if (num < 0)
+	nb = n;
+	i = ft_digit_count(nb);
+	if (!(str = malloc(i * sizeof(char) + 1)))
+		return (0);
+	str[i--] = 0;
+	if (nb == 0)
+	{
+		str = ft_calloc(2, sizeof(char));
+		str[0] = 48;
+	}
+	if (nb < 0)
 	{
 		str[0] = '-';
-		num = -num;
+		nb = nb * -1;
 	}
-
-	if (num == 0)
-		str[0] = '0';
-
-	while (num > 0)
+	while (nb > 0)
 	{
-		str[i] = (num % 10) + '0';
-		num /= 10;
-		i--;
+		str[i--] = nb % 10 + '0';
+		nb = nb / 10;
 	}
 	return (str);
 }

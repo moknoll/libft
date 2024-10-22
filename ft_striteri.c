@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 09:17:39 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/21 17:12:15 by moritzknoll      ###   ########.fr       */
+/*   Created: 2024/10/21 17:58:50 by moritzknoll       #+#    #+#             */
+/*   Updated: 2024/10/21 18:00:58 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-char *ft_strdup(char *s)
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-    int i;
-    int len;
-    char *copy;
+	unsigned i;
 
-    i = 0;
-    len = 0;
-
-    while(s[len])
-    {
-        len++;
-    }
-    copy = (char *) malloc(len + 1);
-    if (copy == NULL)
-        return (NULL);
-    while(s[i])
-        copy[i] = s[i];
-        i++;
-    copy[i] = '\0';
-    return (copy);
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

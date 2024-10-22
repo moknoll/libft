@@ -1,36 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 09:17:39 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/21 17:12:15 by moritzknoll      ###   ########.fr       */
+/*   Created: 2024/10/21 18:02:59 by moritzknoll       #+#    #+#             */
+/*   Updated: 2024/10/21 18:08:31 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char *ft_strdup(char *s)
+int	ft_strlen(const char *str)
 {
-    int i;
-    int len;
-    char *copy;
+	int	len;
 
-    i = 0;
-    len = 0;
+	len = 0;
+	while (str[len])
+	{
+		len++;
+	}
+	return (len);
+}
 
-    while(s[len])
-    {
-        len++;
-    }
-    copy = (char *) malloc(len + 1);
-    if (copy == NULL)
-        return (NULL);
-    while(s[i])
-        copy[i] = s[i];
-        i++;
-    copy[i] = '\0';
-    return (copy);
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	unsigned int i;
+	char *new_string;
+	i = 0;
+
+	new_string = (char *)malloc(ft_strlen(s) + 1);
+	if(!new_string)
+	{
+		return (NULL);
+	}
+
+	while(s[i])
+	{
+		new_string[i] = f(i, &s[i]);
+		i++;
+	}
+
+	new_string[i] = '\0';
+	return (new_string);
 }

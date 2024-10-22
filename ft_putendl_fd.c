@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 09:17:39 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/21 17:12:15 by moritzknoll      ###   ########.fr       */
+/*   Created: 2024/10/21 12:31:05 by moritzknoll       #+#    #+#             */
+/*   Updated: 2024/10/21 12:33:46 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-char *ft_strdup(char *s)
+void	ft_putendl_fd(char *s, int fd)
 {
-    int i;
-    int len;
-    char *copy;
+	int c;
 
-    i = 0;
-    len = 0;
+	c = 0;
+	while(s[c])
+	{
+		write(fd, &s[c], 1);
+		c++;
+	}
+	write(fd, "\n", 1);
+}
 
-    while(s[len])
-    {
-        len++;
-    }
-    copy = (char *) malloc(len + 1);
-    if (copy == NULL)
-        return (NULL);
-    while(s[i])
-        copy[i] = s[i];
-        i++;
-    copy[i] = '\0';
-    return (copy);
+int main()
+{
+	char *str = "Hello";
+
+	ft_putendl_fd(str, 1);
 }

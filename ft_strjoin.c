@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 15:17:29 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/22 11:20:20 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/22 15:11:20 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-static int	ft_strlen(char *str)
+static int	ft_strlen(const char *str)
 {
 	int	len;
 
@@ -64,8 +64,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 // int main ()
 // {
-//     char *str1 = "Hello"; 
-//     char *str2 = "World"; 
+//     char *str1 = "Hello";
+//     char *str2 = "World";
 
 //     printf("%s", ft_strjoin(str1, str2));
 // }

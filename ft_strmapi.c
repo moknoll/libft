@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 18:02:59 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/22 11:09:10 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/22 15:10:32 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int	ft_strlen(const char *str)
 {
@@ -37,7 +38,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	while (s[i])
 	{
-		new_string[i] = f(i, &s[i]);
+		new_string[i] = f(i, s[i]);
 		i++;
 	}
 	new_string[i] = '\0';

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:47:25 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/23 09:25:17 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2024/10/23 10:47:52 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ static int count_words(char const *s, char c) {
 	return count;
 }
 
-char **ft_split(char const *s, char c) {
+char **ft_split(char const *s, char c) 
+{
     char **result;
     int i;
 	int j;

@@ -6,33 +6,23 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 12:43:02 by mknoll            #+#    #+#             */
-/*   Updated: 2024/10/22 11:02:13 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/23 11:07:56 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
-#include <ctype.h>
 
-int	ft_isalpha(char *str)
+int	ft_isalpha(int c)
 {
-	int	i;
-
-	i = 0;
-	if (!(str[i]))
+	if ((c >= 'A' && c <= 'Z')
+		|| ((c >= 'a' && c <= 'z')))
 	{
 		return (1);
 	}
-	while (str[i] != '\0')
+	else
 	{
-		if (!((str[i] >= 65 && str[i] <= 90)
-				|| (str[i] >= 97 && str[i] <= 122)))
-		{
-			return (0);
-		}
-		i++;
+		return (0);
 	}
-	return (1);
 }
 
 // int main()

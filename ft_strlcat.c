@@ -6,29 +6,33 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:28:11 by mknoll            #+#    #+#             */
-/*   Updated: 2024/10/22 11:08:58 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/23 11:28:41 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strlcat(char *dest, char *src, unsigned int n)
+size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
 	unsigned int	i;
-	unsigned int	j;
+	unsigned int	src_len;
+	unsigned int	dest_len;
 
-	j = 0;
 	i = 0;
-	while (dest[i])
+	src_len = 0;
+	dest_len = 0;
+	while (dest[dest_len] && dest_len < n)
+		dest_len++;
+	while (src[src_len])
+		src_len++;
+	if (n <= dest_len)
+		return (n + src_len);
+	while (src[i] && (dest_len + i) < (n - 1))
 	{
+		dest[dest_len + i] = src[i];
 		i++;
 	}
-	while (src[j] && j < (n - 1))
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (i);
+	if ((dest_len + i) < n)
+		dest[dest_len + i] = '\0';
+	return (dest_len + src_len);
 }

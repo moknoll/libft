@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 09:27:03 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/22 15:08:39 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2024/10/23 11:59:47 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	unsigned int	j;
 
 	i = 0;
+	if (!little || little[0] == '\0')
+	{
+		return ((char *)big);
+	}
 	while (big[i] && (i < len))
 	{
 		j = 0;

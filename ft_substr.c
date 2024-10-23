@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 10:53:51 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/22 14:43:41 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2024/10/23 12:02:24 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
+
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	i;
-	char			*sub_string;
+	size_t	i;
+	char	*sub_string;
 
 	i = 0;
 	sub_string = (char *)malloc(len + 1);

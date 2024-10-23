@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 12:59:56 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/22 11:58:39 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/23 11:10:30 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	*ft_memset(void *ptr, int value, int n)
 	return (ptr);
 }
 
-void	*calloc(size_t nitems, size_t size)
+void	*ft_calloc(size_t nitems, size_t size)
 {
 	size_t	total_size;
 	void	*ptr;

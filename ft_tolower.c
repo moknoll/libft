@@ -6,26 +6,19 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:40:35 by mknoll            #+#    #+#             */
-/*   Updated: 2024/10/22 10:20:24 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/23 11:35:12 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char	*ft_toupper(char *str)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	if (c >= 'A' && c <= 'Z')
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-		{
-			str[i] = str[i] + 32;
-		}
-		i++;
+		c = c + 32;
 	}
-	return (str);
+	return (c);
 }
 
 // int	main()

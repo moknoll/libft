@@ -6,14 +6,24 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 10:53:51 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/23 12:02:24 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/23 13:01:49 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
+size_t	ft_strlen(char const *s)
+{
+	size_t	i;
 
+	i = 0;
+	while (s[i])
+	{
+		i++;
+	}
+	return (i);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -21,18 +31,24 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub_string;
 
 	i = 0;
+	if (!s || start >= ft_strlen(s))
+	{
+		return (NULL);
+	}
+	if (ft_strlen(s) - start < len)
+	{
+		len = ft_strlen(s) - start;
+	}
 	sub_string = (char *)malloc(len + 1);
 	if (!sub_string)
 	{
 		return (NULL);
 	}
-	while (s[i] && (i < len))
+	while (i < len)
 	{
-		if (s[i] == (char)start)
-		{
-			sub_string = ((char *)&s[i]);
-		}
+		sub_string[i] = s[start + i];
 		i++;
 	}
-	return (NULL);
+	sub_string[len] = '\0';
+	return (sub_string);
 }

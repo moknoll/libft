@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/13 12:54:37 by mknoll            #+#    #+#             */
-/*   Updated: 2024/10/23 12:24:30 by mknoll           ###   ########.fr       */
+/*   Created: 2024/10/23 12:25:23 by mknoll            #+#    #+#             */
+/*   Updated: 2024/10/23 12:44:52 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_strlen(char *str)
+int	ft_isprint(int c)
 {
-	int	len;
-
-	len = 0;
-	while (str[len])
+	if (c >= 32 && c <= 126)
 	{
-		len++;
+		return (1);
 	}
-	return (len);
+	else
+	{
+		return (0);
+	}
 }
-
-// int main()
-// {
-// 	char str[] = "hello";
-
-// 	printf("%d", ft_strlen(str));
-// }

@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 11:53:23 by mknoll            #+#    #+#             */
-/*   Updated: 2024/10/23 11:24:52 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/23 13:02:00 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <libft.h>
-
 
 int		ft_atoi(char *str);
 void	ft_bzero(void *s, int n);
@@ -50,4 +49,5 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+int		ft_isprint(int c);
 #endif

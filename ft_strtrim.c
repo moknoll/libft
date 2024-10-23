@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 17:54:08 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/22 12:09:59 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/23 12:51:35 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,13 @@
 
 static int	is_in_set(char c, const char *set)
 {
-	int	j;
-
-	j = 0;
-	while (set[j])
+	while (*set)
 	{
-		if (c == set[j])
+		if (c == *set)
 		{
 			return (1);
-			j++;
 		}
+		set++;
 	}
 	return (0);
 }

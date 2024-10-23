@@ -6,15 +6,16 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:47:25 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/23 10:47:52 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/23 13:16:49 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static int count_words(char const *s, char c) {
-	int count ;
-	int in_word;
+static int	count_words(char const *s, char c) 
+{
+	int	count ;
+	int	in_word;
 
 	count = 0;
 	in_word = 0;
@@ -31,15 +32,15 @@ static int count_words(char const *s, char c) {
 		}
 		s++;
 	}
-	return count;
+	return (count);
 }
 
 char **ft_split(char const *s, char c) 
 {
-    char **result;
-    int i;
-	int j;
-	int word_len;
+    char	**result;
+    int		i;
+	int		j;
+	int		word_len;
 
 	i = 0;
 	j = 0;
@@ -47,25 +48,26 @@ char **ft_split(char const *s, char c)
 	result = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
 
 	if (!s || !(result))
-		return NULL;
-
-	while (*s) {
+		return (NULL);
+	while (*s)
+	{
 		if (*s != c)
 		{
 			word_len = 0;
 			while (s[word_len] && s[word_len] != c)
 				word_len++;
 			if (!(result[i] = (char *)malloc(word_len + 1)))
-				return NULL;
+				return (NULL);
 			j = 0;
 			while (j < word_len)
 				result[i][j++] = *s++;
 				result[i++][j] = '\0';
-		} else
+		} 
+		else
 			s++;
 	}
 	result[i] = NULL;
-	return result;
+	return (result);
 }
 
 

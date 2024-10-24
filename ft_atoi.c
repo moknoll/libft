@@ -6,14 +6,14 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 13:07:17 by mknoll            #+#    #+#             */
-/*   Updated: 2024/10/15 10:21:03 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/24 11:21:55 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	res;

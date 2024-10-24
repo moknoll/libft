@@ -6,13 +6,13 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 12:54:37 by mknoll            #+#    #+#             */
-/*   Updated: 2024/10/23 12:24:30 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/24 11:27:27 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	len;
 

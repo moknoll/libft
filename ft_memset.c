@@ -6,21 +6,21 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:15:02 by mknoll            #+#    #+#             */
-/*   Updated: 2024/10/22 11:08:22 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/24 11:36:16 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *ptr, int value, int n)
+#include <stdio.h>
+
+void	*ft_memset(void *ptr, int value, size_t n)
 {
-	int				i;
 	unsigned char	*byte_ptr;
 
-	i = 0;
 	byte_ptr = (unsigned char *) ptr;
-	while (i < n)
+	while (n > 0)
 	{
-		byte_ptr[i] = (unsigned char) value;
-		i++;
+		*(byte_ptr++) = (unsigned char) value;
+		n--;
 	}
 	return (ptr);
 }

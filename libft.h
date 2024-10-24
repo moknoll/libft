@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 11:53:23 by mknoll            #+#    #+#             */
-/*   Updated: 2024/10/23 13:02:00 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/24 11:51:31 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <libft.h>
 
-int		ft_atoi(char *str);
+int		ft_atoi(const char *str);
 void	ft_bzero(void *s, int n);
 void	*ft_calloc(size_t nitems, size_t size);
 int		ft_isalnum(int c);

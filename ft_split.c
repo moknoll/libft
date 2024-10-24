@@ -6,15 +6,15 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:47:25 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/23 13:16:49 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/24 10:59:46 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static int	count_words(char const *s, char c) 
+static int	count_words(char const *s, char c)
 {
-	int	count ;
+	int	count;
 	int	in_word;
 
 	count = 0;
@@ -35,39 +35,51 @@ static int	count_words(char const *s, char c)
 	return (count);
 }
 
-char **ft_split(char const *s, char c) 
+static char	*allocate_word(const char *s, char c)
 {
-    char	**result;
-    int		i;
-	int		j;
+	int		i;
 	int		word_len;
+	char	*word;
+
+	word_len = 0;
+	i = 0;
+	while (s[word_len] && s[word_len] != c)
+		word_len++;
+	word = (char *)malloc((word_len + 1) * sizeof(char));
+	if (!word)
+		return (NULL);
+	while (i < word_len)
+	{
+		word[i] = s[i];
+		i++;
+	}
+	word[word_len] = '\0';
+	return (word);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**result;
+	int		i;
 
 	i = 0;
-	j = 0;
-	word_len = 0;
 	result = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
-
 	if (!s || !(result))
 		return (NULL);
 	while (*s)
 	{
 		if (*s != c)
 		{
-			word_len = 0;
-			while (s[word_len] && s[word_len] != c)
-				word_len++;
-			if (!(result[i] = (char *)malloc(word_len + 1)))
+			result[i] = allocate_word(s, c);
+			if (!result[i])
 				return (NULL);
-			j = 0;
-			while (j < word_len)
-				result[i][j++] = *s++;
-				result[i++][j] = '\0';
-		} 
+			i++;
+			while (*s && *s != c)
+				s++;
+		}
 		else
 			s++;
 	}
 	result[i] = NULL;
 	return (result);
 }
-
-

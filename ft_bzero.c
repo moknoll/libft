@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:23:28 by mknoll            #+#    #+#             */
-/*   Updated: 2024/10/23 11:10:01 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/24 11:48:29 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned int	i;
-	unsigned char	*byte_ptr;
+	char	*temp_ptr;
 
-	i = 0;
-	byte_ptr = (unsigned char *) s;
-	while (i < n)
+	temp_ptr = (char *) s;
+	while (n > 0)
 	{
-		byte_ptr[i] = 0;
-		i++;
+		*(temp_ptr++) = 0;
+		n--;
 	}
 }

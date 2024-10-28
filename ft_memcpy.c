@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:35:13 by mknoll            #+#    #+#             */
-/*   Updated: 2024/10/22 12:01:59 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/28 10:01:56 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memcpy(void *dest, const void *src, int n)
 	unsigned char	*byte_src;
 
 	i = 0;
+	if (dest == (void *)0 && src == (void *)0)
+		return (dest);
 	byte_dest = (unsigned char *) dest;
 	byte_src = (unsigned char *) src;
 	while (i < n)

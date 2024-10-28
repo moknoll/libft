@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 08:45:52 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/25 16:07:06 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2024/10/28 09:53:03 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-static	int counter(long nbr)
+static	int	counter(long nbr)
 {
 	int	count;
 
 	count = 0;
 	if (nbr == 0)
-		return 1;
+		return (1);
 	if (nbr < 0)
 	{
 		count++;
@@ -31,7 +31,7 @@ static	int counter(long nbr)
 		nbr /= 10;
 		count++;
 	}
-    return (count);
+	return (count);
 }
 
 static void	ft_bzero(void *s, size_t n)
@@ -49,6 +49,7 @@ static void	ft_bzero(void *s, size_t n)
 static char	*converting(int len)
 {
 	char	*temp;
+
 	temp = malloc((len + 1) * sizeof(char));
 	if (!temp)
 		return (NULL);
@@ -56,12 +57,12 @@ static char	*converting(int len)
 	return (temp);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int len;
-	int i;
-	char *result;
-	long nbr;
+	int		len;
+	int		i;
+	char	*result;
+	long	nbr;
 
 	nbr = n;
 	len = counter(nbr);
@@ -85,17 +86,17 @@ char *ft_itoa(int n)
 	return (result);
 }
 
-int main(void)
-{
-    printf("ft_itoa(123) = %s\n", ft_itoa(123));           // "123"
-    printf("ft_itoa(-456) = %s\n", ft_itoa(-456));         // "-456"
-    printf("ft_itoa(0) = %s\n", ft_itoa(0));               // "0"
-    printf("ft_itoa(INT_MAX) = %s\n", ft_itoa(INT_MAX));   // "2147483647"
-    printf("ft_itoa(INT_MIN) = %s\n", ft_itoa(INT_MIN));   // "-2147483648"
-    printf("ft_itoa(7) = %s\n", ft_itoa(7));               // "7"
-    printf("ft_itoa(-3) = %s\n", ft_itoa(-3));             // "-3"
-    printf("ft_itoa(1000000) = %s\n", ft_itoa(1000000));   // "1000000"
-    printf("ft_itoa(-1000000) = %s\n", ft_itoa(-1000000)); // "-1000000"
+// int main(void)
+// {
+//     printf("ft_itoa(123) = %s\n", ft_itoa(123));           // "123"
+//     printf("ft_itoa(-456) = %s\n", ft_itoa(-456));         // "-456"
+//     printf("ft_itoa(0) = %s\n", ft_itoa(0));               // "0"
+//     printf("ft_itoa(INT_MAX) = %s\n", ft_itoa(INT_MAX));   // "2147483647"
+//     printf("ft_itoa(INT_MIN) = %s\n", ft_itoa(INT_MIN));   // "-2147483648"
+//     printf("ft_itoa(7) = %s\n", ft_itoa(7));               // "7"
+//     printf("ft_itoa(-3) = %s\n", ft_itoa(-3));             // "-3"
+//     printf("ft_itoa(1000000) = %s\n", ft_itoa(1000000));   // "1000000"
+//     printf("ft_itoa(-1000000) = %s\n", ft_itoa(-1000000)); // "-1000000"
 
-    return 0;
-}
+//     return 0;
+// }

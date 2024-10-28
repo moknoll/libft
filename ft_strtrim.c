@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 17:54:08 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/23 12:51:35 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/28 10:29:35 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	is_in_set(char c, const char *set)
 	return (0);
 }
 
-static int	ft_strlen(char const *str)
+static size_t	ft_strlen(char const *str)
 {
 	int	len;
 
@@ -61,14 +61,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	start = 0;
 	end = ft_strlen(s1) - 1;
-	new_str = (char *)malloc(ft_strlen(s1) + 1);
-	if (!new_str)
-		return (NULL);
 	while (s1[start] && is_in_set(s1[start], set))
 		start++;
 	while (end >= start && is_in_set(s1[end], set))
 		end--;
 	len = end - start + 1;
+	new_str = (char *)malloc(len + 1);
 	if (!new_str)
 		return (NULL);
 	ft_strncpy(new_str, &s1[start], len);

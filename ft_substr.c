@@ -3,15 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 10:53:51 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/27 08:44:05 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2024/10/28 09:50:28 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+
+static void	*ft_calloc(size_t nitems, size_t size)
+{
+	unsigned char	*ptr;
+	size_t			i;
+
+	i = 0;
+	ptr = malloc(nitems * size);
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
+	while (i < nitems * size)
+		ptr[i++] = 0;
+	return (ptr);
+}
 
 static char	*ft_strdup(char *s)
 {
@@ -60,32 +76,29 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	}
 	if (start > ft_strlen(s))
-        return (ft_strdup(""));
+		return (ft_strdup(""));
 	if (ft_strlen(s) - start < len)
 	{
 		len = ft_strlen(s) - start;
 	}
-	sub_string = (char *)malloc(len + 1);
+	sub_string = ft_calloc(len + 1, sizeof(char));
 	if (!sub_string)
-	{
 		return (NULL);
-	}
 	while (i < len)
 	{
 		sub_string[i] = s[start + i];
 		i++;
 	}
-	sub_string[len] = '\0';
 	return (sub_string);
 }
 
-int main()
-{
-	char *result = ft_substr("hola", 0, 20);
-	char *result2 = ft_substr("", 0, 1);
-	char *result3 = ft_substr("hola", 4, 20);
+// int main()
+// {
+// 	char *result = ft_substr("hola", 0, 20);
+// 	char *result2 = ft_substr("", 0, 1);
+// 	char *result3 = ft_substr("hola", 4, 20);
 
-	printf("%s\n", result);
-	printf("%s\n", result2);
-	printf("%s\n", result3);
-}
+// 	printf("%s\n", result);
+// 	printf("%s\n", result2);
+// 	printf("%s\n", result3);
+// }

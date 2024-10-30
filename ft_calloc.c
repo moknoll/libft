@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 12:59:56 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/24 12:24:55 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/29 09:57:41 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ void	*ft_calloc(size_t nitems, size_t size)
 		return (NULL);
 	}
 	while (i < nitems * size)
-		ptr[i++] = 0;
+		ptr[i] = 0;
 	return (ptr);
 }

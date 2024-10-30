@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:47:25 by moritzknoll       #+#    #+#             */
-/*   Updated: 2024/10/24 12:25:04 by mknoll           ###   ########.fr       */
+/*   Updated: 2024/10/30 09:21:06 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 static int	count_words(char const *s, char c)
 {
@@ -83,3 +84,24 @@ char	**ft_split(char const *s, char c)
 	result[i] = NULL;
 	return (result);
 }
+
+// int main()
+// {
+// 	{
+//     const char *str = "Hallo,World,this,is,a,Test";
+//     char delim = ',';
+//     int count;
+//     char **result;
+
+//     result = ft_split(str, delim);
+//     count = count_words(str, delim);
+
+//     for (int i = 0; i < count; i++)
+//     {
+//         printf("Part %d: %s\n", i + 1, result[i]);
+//         free(result[i]);
+//     }
+//     free(result);
+//     return 0;
+// }
+// }

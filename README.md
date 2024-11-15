@@ -52,6 +52,29 @@
   - `ft_lstdelone`: Deletes a node in a linked list.
   - `ft_lstclear`: Deletes all nodes in a linked list.
 
+## Makefile
+The provided Makefile allows you to compile the libft library and easily add bonus functionalities related to linked lists.
+
+1. Default target (all): Builds the static library libft.a using the core object files.
+```bash
+make
+```
+2. Bonus target (bonus): Includes bonus object files (linked list functions) and builds the library.
+```bash
+make bonus
+```
+3. Clean target (clean): Removes object files (.o).
+```bash
+make clean
+```
+4. Full clean target (fclean): Removes object files and the static library (libft.a).
+```bash
+make fclean
+```
+5. Rebuild target (re): Cleans and rebuilds everything from scratch.
+```bash
+re
+```
 ## Installation
 
 1. Clone the repository:
@@ -136,13 +159,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ### Key Notes:
 - **Explanation Section**: Provides a description of the project and a brief overview of how the library is organized.
+- **Makefile Integration**: The Makefile section is now included, with detailed explanations of the targets and their usage.
 - **Usage Example**: Shows how to use functions like `ft_atoi` and `ft_itoa`.
 - **File Descriptions**: Details each source file and the function it implements for clarity.
 - **Installation Instructions**: Simple steps to clone the project and integrate it into a C project.
 
 This format should work perfectly for your `libft` project and help others (or yourself) understand how to use it efficiently!
 ```
-
-
-
-
